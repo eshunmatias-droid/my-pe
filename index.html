@@ -89,7 +89,12 @@
     <input type="email" placeholder="Your Email" style="width: 80%; padding: 10px; margin: 10px 0;"><br>
     <textarea placeholder="Tell me about your website idea" style="width: 80%; padding: 10px; margin: 10px 0;"></textarea><br>
     <button type="button" onclick="alert('Thank you! I will contact you soon💕')" style="background-color: orange;">Send Request</button>
-  </form>
+  <form action="https://formspree.io/f/your-email@email.com" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required style="width: 80%; padding: 10px; margin: 10px 0;"><br>
+  <input type="email" name="email" placeholder="Your Email" required style="width: 80%; padding: 10px; margin: 10px 0;"><br>
+  <textarea name="message" placeholder="Tell me about your website idea" required style="width: 80%; padding: 10px; margin: 10px 0;"></textarea><br>
+  <button type="submit" style="background-color: orange;">Send Request</button>
+</form>
 
   </div> 
   <script>
