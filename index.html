@@ -8,12 +8,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     background-color: #f4f4f4; 
     text-align: center; 
-    transition: 0.3s; /* Makes the theme switch smooth */
+    transition: 0.3s;
     margin: 0;
     padding: 20px;
   }
 
-  /* 2. THE CONTAINER (The "Folder" that holds your cards) */
+  /* 2. THE CONTAINER */
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -21,18 +21,22 @@
     align-items: stretch;
     gap: 20px;
     padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  /* 3. THE CARDS (Your project boxes) */
+  /* 3. THE CARDS */
   .card { 
     background: white; 
     padding: 30px; 
-    width: 300px; 
-    flex: 1 1 300px;
-    max-width: 90%;
+    flex: 1 1 300px; /* This makes cards flexible */
+    max-width: 350px;
     border-radius: 15px; 
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
     color: #333; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   h1 { color: #2c3e50; margin-top: 10px; }
@@ -45,20 +49,29 @@
     border-radius: 8px; 
     cursor: pointer; 
     font-weight: bold;
+    margin-top: 10px;
   }
 
-  button:hover { background-color: blue; }
+  button:hover { background-color: #2ecc71; color: white; }
 
-  /* 4. RESPONSIVE DESIGN (For phone users) */
+  /* 4. MOBILE-SPECIFIC FIX (This makes it look good on your phone) */
   @media (max-width: 600px) {
-    .card { width: 90%; }
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      width: 95%;
+      max-width: none;
+      flex: none;
+    }
     h1 { font-size: 1.8rem; }
   }
 </style>
 </head>
 <body>
 
-  <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=400" 
+  <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600" 
        alt="Stadium" style="width:100%; max-width:500px; border-radius:15px; margin-bottom: 20px;">
   
   <h1>Mathias Eshun's Dev Studio</h1>
@@ -85,20 +98,20 @@
       <p>An interactive tool for SHS Kinematics and Physics.</p>
       <button onclick="alert('Thank you! I will contact you soon! 😊')">Contact Me</button>
     </div>
-    <div class="card" style="background-color: #34495e; color: white;">
-  <h3>Hire Me for a Project</h3>
-  <form action="https://formspree.io/f/your-email@email.com" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required style="width: 80%; padding: 10px; margin: 10px 0;"><br>
-  <input type="email" name="email" placeholder="Your Email" required style="width: 80%; padding: 10px; margin: 10px 0;"><br>
-  <textarea name="message" placeholder="Tell me about your website idea" required style="width: 80%; padding: 10px; margin: 10px 0;"></textarea><br>
-  <button type="submit" style="background-color: orange;">Send Request</button>
-</form>
 
-  </div> 
-  <script>
+    <div class="card" style="background-color: #34495e; color: white;">
+      <h3>Hire Me for a Project</h3>
+      <form action="https://formspree.io/f/your-email@email.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required style="width: 85%; padding: 10px; margin: 5px 0; border-radius: 5px; border: none;"><br>
+        <input type="email" name="email" placeholder="Your Email" required style="width: 85%; padding: 10px; margin: 5px 0; border-radius: 5px; border: none;"><br>
+        <textarea name="message" placeholder="Tell me about your website idea" required style="width: 85%; padding: 10px; margin: 5px 0; border-radius: 5px; border: none; height: 80px;"></textarea><br>
+        <button type="submit" style="background-color: orange; width: 90%;">Send Request</button>
+      </form>
+    </div>
+
+  </div> <script>
     function changeMode() {
       var element = document.body;
-      // This checks the current background and flips it
       if (element.style.backgroundColor === "rgb(30, 30, 30)") {
         element.style.backgroundColor = "#f4f4f4";
         element.style.color = "black";
