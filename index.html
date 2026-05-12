@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mathias Eshun - Dev Studio</title>
+<style>
+  /* 1. GENERAL STYLES */
+  body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f4f4; 
+    text-align: center; 
+    transition: 0.3s; /* Makes the theme switch smooth */
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* 2. THE CONTAINER (The "Folder" that holds your cards) */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* 3. THE CARDS (Your project boxes) */
+  .card { 
+    background: white; 
+    padding: 30px; 
+    width: 300px; 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    color: #333; 
+  }
+
+  h1 { color: #2c3e50; margin-top: 10px; }
+
+  button { 
+    background-color: gold; 
+    color: #333; 
+    border: none; 
+    padding: 12px 24px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold;
+  }
+
+  button:hover { background-color: orange; }
+
+  /* 4. RESPONSIVE DESIGN (For phone users) */
+  @media (max-width: 600px) {
+    .card { width: 90%; }
+    h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+  <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=400" 
+       alt="Stadium" style="width:100%; max-width:500px; border-radius:15px; margin-bottom: 20px;">
+  
+  <h1>Mathias Eshun's Dev Studio</h1>
+  <p>Expect web solutions in Elmina</p>
+  
+  <button onclick="changeMode()" style="margin-bottom: 30px;">Toggle Dark/Light Mode 🌙</button>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Business Landing Pages</h2>
+      <p>We take business offers and ideas and make them live.</p>
+      <button onclick="alert('Opening Portfolio... 🚀')">View Project</button>
+    </div>
+
+    <div class="card">
+      <h2>Digital Portfolio Design</h2>
+      <p>A high-end website for local shops in Ghana.</p>
+      <button onclick="alert('Goal! ⚽')">View Project</button>
+    </div>
+
+    <div class="card">
+      <h2>School Management Tools</h2>
+      <p>An interactive tool for SHS Kinematics and Physics.</p>
+      <button onclick="alert('Thank you! I will contact you soon! 😊')">Contact Me</button>
+    </div>
+    <div class="card" style="background-color: #34495e; color: white;">
+  <h3>Hire Me for a Project</h3>
+  <form>
+    <input type="text" placeholder="Your Name" style="width: 80%; padding: 10px; margin: 10px 0;"><br>
+    <input type="email" placeholder="Your Email" style="width: 80%; padding: 10px; margin: 10px 0;"><br>
+    <textarea placeholder="Tell me about your website idea" style="width: 80%; padding: 10px; margin: 10px 0;"></textarea><br>
+    <button type="button" onclick="alert('Thank you! I will contact you soon💕')" style="background-color: orange;">Send Request</button>
+  </form>
+
+  </div> 
+  <script>
+    function changeMode() {
+      var element = document.body;
+      // This checks the current background and flips it
+      if (element.style.backgroundColor === "rgb(30, 30, 30)") {
+        element.style.backgroundColor = "#f4f4f4";
+        element.style.color = "black";
+      } else {
+        element.style.backgroundColor = "rgb(30, 30, 30)";
+        element.style.color = "white";
+      }
+    }
+  </script>
+
+</body>
+</html>
